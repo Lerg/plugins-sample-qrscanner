@@ -26,5 +26,7 @@ settings = {
 			}
 		}
 	},
-	['plugin.qrscanner'] = {publisherId = 'com.spiralcodestudio'}
+	plugins = {
+        ['plugin.qrscanner'] = {publisherId = 'com.spiralcodestudio'}
+    }
 }
