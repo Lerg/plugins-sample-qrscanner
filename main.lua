@@ -10,6 +10,7 @@ Opens the scanner view.
 
 options.symbols - array of strings, a list of all types of visual codes to search. Default is 'qr'.
 options.strings - key-value table of string-string values for customization/localization.
+options.overlays - key-value table of key-value tables that define custom image overlays.
 
 Example:
 
@@ -38,6 +39,24 @@ options.strings = {
 
 On Android only title and no_camera_err are used.
 
+Format for custom overlays:
+
+options.overlays = {
+    searching = {
+        filename = 'images/searching.png',
+        baseDir = system.ResourceDirectory
+    },
+    found = {
+        filename = 'images/found.png',
+        baseDir = system.DocumentsDirectory
+    }
+}
+
+options.overlays.searching is shown when the scanner has opened.
+options.overlays.found is shown for a short period of time when a scan result is ready.
+
+baseDir is optional, default is system.ResourceDirectory.
+
 ]]
 
 local rect = display.newRect(display.contentCenterX, display.contentCenterY, 200, 200)
@@ -49,7 +68,7 @@ local function listener(message)
     native.showAlert('QR Code Scanner', message, {'OK'})
 end
 
-local scanButton = widget.newButton {
+widget.newButton {
     x = rect.x, y = rect.y - 40,
     width = 150, height = 50,
     label = 'Scan QR',
@@ -58,7 +77,7 @@ local scanButton = widget.newButton {
         qrscanner.show(listener)
     end}
 
-local scanButton = widget.newButton {
+widget.newButton {
     x = rect.x, y = rect.y + 40,
     width = 150, height = 50,
     label = 'Scan Bar',
@@ -72,6 +91,14 @@ local scanButton = widget.newButton {
             },
             strings = {
                 title = 'Barcode Scanner'
-            }    
+            },
+            overlays = {
+                searching = {
+                    filename = 'images/searching.png'
+                },
+                found = {
+                    filename = 'images/found.png'
+                }
+            }
         })
     end}
