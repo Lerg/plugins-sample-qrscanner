@@ -1,10 +1,12 @@
 settings = {
 	orientation = {
 		default = 'portrait',
-		supported = {'portrait', 'portraitUpsideDown'},
+		supported = {'portrait', 'portraitUpsideDown'}
+		--default = 'landscapeLeft',
+		--supported = {'landscapeLeft', 'landscapeRight'}
 	},
 	iphone = {
-        plist = {
+		plist = {
 			CFBundleIconFile = 'Icon.png',
 			CFBundleIconFiles = {
 				'Icon.png',
@@ -27,6 +29,6 @@ settings = {
 		}
 	},
 	plugins = {
-        ['plugin.qrscanner'] = {publisherId = 'com.spiralcodestudio'}
-    }
+		['plugin.qrscanner'] = {publisherId = 'com.spiralcodestudio'}
+	}
 }
