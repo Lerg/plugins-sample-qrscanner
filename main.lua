@@ -10,6 +10,7 @@ local function listener(event)
 	if not event.isError then
 		-- event.message contains the value of a scanned QR Code or a barcode.
 		print('Scanned message:', event.message)
+		print('Scanned symbol:', event.symbol)
 		native.showAlert('QR Code Scanner', event.message, {'OK'})
 	else
 		print('Error occured:', event.errorCode, event.errorMessage)
@@ -68,6 +69,7 @@ widget.newButton {
 				fontSize = 0.5,
 				color = {0.5, 0.8, 0},
 				backgroundColor = {0.2, 0.2, 0.8},
+				--isHidden = true
 			},
 			--useFrontCamera = true,
 			filter = '^https?://.*', -- Match an URL
