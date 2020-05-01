@@ -26,23 +26,23 @@ widget.newButton {
 		print('Showing scanner')
 		qrscanner.show{listener = listener}
 	end}
-
+  
 widget.newButton {
 	x = rect.x, y = rect.y,
 	width = 150, height = 50,
-	label = 'Scan Barcode',
+	label = 'Scan Barcode - chg',
 	onRelease = function()
 		print('Showing scanner')
 		qrscanner.show{
 			topbar = {
-				text = 'Barcode Scanner',
+				text = 'Barcode Scanner - chg',
 			},
 			--[[symbols = {
 				'aztec', 'code39', 'code39mod43', 'code93', 'code128', 'codabar',
 				'databar', 'databar_exp', 'datamatrix', 'ean8', 'ean13', 'interleaved2of5',
 				'itf14', 'i25', 'isbn10', 'isbn13', 'partial', 'pdf417', 'upca', 'upce'
 			},]]
-			symbols = {'ean8', 'ean13'}, -- Most common barcodes.
+			symbols = {'code39', 'code39mod43'}, -- 'ean8', 'ean13',  }, -- Most common barcodes.
 			overlays = {
 				searching = {
 					filename = 'images/searching.png',
