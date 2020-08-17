@@ -18,6 +18,9 @@ settings = {
 		--default = 'landscapeLeft',
 		--supported = {'landscapeLeft', 'landscapeRight'}
 	},
+	android = {
+		minSdkVersion = '16'
+    },
 	iphone = {
 		plist = {
 			CFBundleIconFile = 'Icon.png',
