@@ -19,7 +19,7 @@ settings = {
 		--supported = {'landscapeLeft', 'landscapeRight'}
 	},
 	android = {
-		minSdkVersion = '16'
+		minSdkVersion = '21'
     },
 	iphone = {
 		plist = {
